@@ -1,2 +1,5 @@
-# nodeTest
-nodejs c++插件练习工程
+node-gyp configure
+
+node-gyp build
+
+node test.js
