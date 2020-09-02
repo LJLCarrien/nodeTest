@@ -48,6 +48,22 @@ namespace demo
         cb->Call(Null(isolate), 1, argv);
     }
 
+    //add
+    void Add(const FunctionCallbackInfo<Value> &args)
+    {
+        Isolate *isolate = args.GetIsolate();
+
+        if (args.Length() < 2)
+        {
+            return;
+        }
+
+        double value = args[0]->NumberValue() + args[1]->NumberValue();
+
+        Local<Number> num = Number::New(isolate, value);
+        args.GetReturnValue().Set(num);
+    }
+
     void init(Local<Object> exports)
     {
         NODE_SET_METHOD(exports, "hello", Method1);
@@ -56,6 +72,8 @@ namespace demo
         //callback
         NODE_SET_METHOD(exports, "callthis", CallThis); // we'll create Add in a moment...
         NODE_SET_METHOD(exports, "callthis_withthis", CallThisWithThis);
+        //add
+        NODE_SET_METHOD(exports, "add", Add);
     }
 
     NODE_MODULE(addon, init)
