@@ -1,6 +1,7 @@
 {
     "name": "nodeTest",
     "version": "0.0.1",
+    "description": "nodeTest",
     "private": true,
     "gypfile": true,
     "scripts": {
@@ -8,5 +9,10 @@
         "build": "node-gyp build",
         "clean": "node-gyp clean",
         "rebuild": "node-gyp rebuild"
+    },
+    "dependencies": {
+        "bindings": "~1.2.1",
+        "nan": "^2.14.1",
+        "node-addon-api": "^1.0.0"
     }
 }

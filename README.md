@@ -51,3 +51,29 @@ https://github.com/caoxiemeihao/node-addons-learn.git
 - $ node-gyp clean：清理生成的构建文件以及输出目录，说白了就是把目录清理了；
 - $ node-gyp rebuild：相当于依次执行了 clean、configure 和 build；
 - $ node-gyp install：手动下载当前版本的 Node.js 的头文件和库文件到对应目录。
+
+
+
+### hello、test
+
+使用nan
+
+引入头文件 #include <nan.h>
+
+### calldll
+
+ 由c库编写的库
+
+使用napi
+
+引入头文件 #include <node_api.h>
+
+
+
+### cppCallDll
+
+ 由c++库编写的库
+
+使用node-addon-api
+
+引入头文件 #include <napi.h>
