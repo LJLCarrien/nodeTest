@@ -64,6 +64,12 @@ namespace demo
         args.GetReturnValue().Set(num);
     }
 
+    //whocalled
+    void Whocalled(const FunctionCallbackInfo<Value> &args)
+    {
+        args.GetReturnValue().Set(args.Holder());
+    }
+
     void init(Local<Object> exports)
     {
         NODE_SET_METHOD(exports, "hello", Method1);
@@ -74,6 +80,8 @@ namespace demo
         NODE_SET_METHOD(exports, "callthis_withthis", CallThisWithThis);
         //add
         NODE_SET_METHOD(exports, "add", Add);
+        //whocalled
+        NODE_SET_METHOD(exports, "whocalled", Whocalled);
     }
 
     NODE_MODULE(addon, init)

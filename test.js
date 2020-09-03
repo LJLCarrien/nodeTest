@@ -26,3 +26,8 @@ console.log(addon.add(3, 4));
 var u = addon.add(1)
 console.log(u);
 console.log(u === undefined);
+
+//whocalled
+console.log('--------------------------- whocalled')
+console.log(addon);
+console.log(addon.whocalled);
