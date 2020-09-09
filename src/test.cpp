@@ -8,9 +8,9 @@ using v8::Local;
 // using v8::Number;
 using v8::Object;
 // using v8::String;
-using v8::Value;
 using v8::Context;
 using v8::FunctionTemplate;
+using v8::Value;
 
 void Method_proHelper(const Nan::FunctionCallbackInfo<Value> &info)
 {
@@ -43,4 +43,5 @@ void Init(Local<Object> exports)
                      .ToLocalChecked());
 }
 
-NODE_MODULE(test, Init)
+//module_name 必须对应上binding.gyp中的 target_name,此处使用宏NODE_GYP_MODULE_NAME
+NODE_MODULE(NODE_GYP_MODULE_NAME, Init)
