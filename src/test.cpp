@@ -1,16 +1,16 @@
 #include <nan.h>
 #include "test.h"
 
-using namespace v8;
+// using namespace v8;
 // using v8::FunctionCallbackInfo;
 // using v8::Isolate;
-// using v8::Local;
+using v8::Local;
 // using v8::Number;
-// using v8::Object;
+using v8::Object;
 // using v8::String;
-// using v8::Value;
-// using v8::Context;
-// using v8::FunctionTemplate;
+using v8::Value;
+using v8::Context;
+using v8::FunctionTemplate;
 
 void Method_proHelper(const Nan::FunctionCallbackInfo<Value> &info)
 {

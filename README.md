@@ -35,9 +35,10 @@ node test\test.js
 - $ node-gyp rebuild：相当于依次执行了 clean、configure 和 build；
 - $ node-gyp install：手动下载当前版本的 Node.js 的头文件和库文件到对应目录。
 
+### binding.gyp 参考
+[gyp 文件输入格式参考](https://itbilu.com/nodejs/npm/By7L5p3ff.html#Primitive-Types)
+参考 https://github.com/nodejs/node-v0.x-archive/blob/f39e608c6eb11c91839ea4661caece1f89f1b12f/common.gypi#L42
 
 ### protoc 命令 生成.pb.cc .pb.h
 protoc --cpp_out=./ Account.proto
 
-### protobuf 版本
-static_libs是由protobuf-cpp-3.13.0 编译出来的
