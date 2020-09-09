@@ -6,8 +6,9 @@
                         "src/protobufHelper.cpp",
                         "Account.pb.cc",
                         "src/shareMemoryHelper.cpp", ],
+            'defines': ['NAPI_DISABLE_CPP_EXCEPTIONS'],
             "include_dirs": [
-                "<!(node -e \"require('nan')\")",
+                "<!@(node -p \"require('node-addon-api').include\")",
                 "include",  # 头文件 相当于项目属性配置-c/c++-常规-附加包含目录
             ],
             'link_settings': {
