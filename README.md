@@ -1,15 +1,3 @@
-### 生成build
-
-```shell
-node-gyp configure
-```
-
-### 生成release
-
-```shell
-node-gyp build
-```
-
 ### 根据指定版本重编
 
 ```
@@ -24,17 +12,12 @@ node-gyp rebuild --target=4.2.12 --arch= --dist-url=https://npm.taobao.org/mirro
 
 --dist-url指定头文件下载地址，原答案这个值写的是https://atom.io/download/electron，国内的话不管用
 
+
 ### 测试js里使用addon.node
 
 ```
-node test.js
+node test\test.js
 ```
-
-### 可参考的demo项目
-
-https://github.com/freezer333/nodecpp-demo.git
-
-https://github.com/caoxiemeihao/node-addons-learn.git
 
 
 
@@ -53,27 +36,8 @@ https://github.com/caoxiemeihao/node-addons-learn.git
 - $ node-gyp install：手动下载当前版本的 Node.js 的头文件和库文件到对应目录。
 
 
+### protoc 命令 生成.pb.cc .pb.h
+protoc --cpp_out=./ Account.proto
 
-### hello、test
-
-使用nan
-
-引入头文件 #include <nan.h>
-
-### calldll
-
- 由c库编写的库
-
-使用napi
-
-引入头文件 #include <node_api.h>
-
-
-
-### cppCallDll
-
- 由c++库编写的库
-
-使用node-addon-api
-
-引入头文件 #include <napi.h>
+### protobuf 版本
+static_libs是由protobuf-cpp-3.13.0 编译出来的

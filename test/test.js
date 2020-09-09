@@ -1,3 +1,4 @@
-var addon = require('bindings')('test');
+var test = require('bindings')('test');
 
-console.log(addon.hello()); // 'world'
+console.log(test.method_proHelper());
+console.log(test.method_shareMemoryHelper());
