@@ -42,3 +42,12 @@ node test\test.js
 ### protoc 命令 生成.pb.cc .pb.h
 protoc --cpp_out=./ Account.proto
 
+### >100m文件上传失败
+```
+git lfs install
+```
+
+Git LFS 管理lib文件
+```
+git lfs track "*.lib"
+```
