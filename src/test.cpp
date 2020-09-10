@@ -5,8 +5,19 @@ Napi::String Method_proHelper(const Napi::CallbackInfo &info)
 {
     Napi::Env env = info.Env();
     ProtoBufHelper *proHelper = new ProtoBufHelper();
-    proHelper->test();
-    return Napi::String::New(env, "-----------------Method_proHelper-- --------------End");
+
+    if (!info[0].IsNumber())
+    {
+        Napi::TypeError::New(env, "Wrong arguments").ThrowAsJavaScriptException();
+        return Napi::String::New(env, "-----------------Method_proHelper-----------------Wrong arguments");
+    }
+
+    int32_t arg_id = info[0].As<Napi::Number>().Int32Value();
+    std::string arg_name = info[1].As<Napi::String>();
+    std::string arg_password = info[2].As<Napi::String>();
+    std::string serStr = proHelper->serializeToStr(arg_id, arg_name, arg_password);
+    proHelper->ParseFromString(serStr);
+    return Napi::String::New(env, "-----------------Method_proHelper-----------------End");
 }
 
 Napi::String Method_shareMemoryHelper(const Napi::CallbackInfo &info)

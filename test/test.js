@@ -1,4 +1,7 @@
 var test = require('bindings')('test');
 
-console.log(test.method_proHelper());
+let id = 7300;
+let name = 'carrien';
+let password = '123123123';
+console.log(test.method_proHelper(id, name, password));
 console.log(test.method_shareMemoryHelper());
